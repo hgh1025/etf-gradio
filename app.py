@@ -476,4 +476,7 @@ demo = gr.ChatInterface(
 
 # 인터페이스 실행
 if __name__ == "__main__":
-    demo.launch()
+    import os
+
+    port = int(os.environ.get("PORT", 7860))
+    demo.launch(server_name="0.0.0.0", server_port=port, share=False)
